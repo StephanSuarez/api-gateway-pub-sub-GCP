@@ -10,6 +10,7 @@ import (
 type Env struct {
 	ServerAddress string
 	PortServer    string
+	ProjectID     string
 }
 
 func NewEnv() *Env {
@@ -21,6 +22,7 @@ func NewEnv() *Env {
 
 	env.ServerAddress = os.Getenv("SERVER_ADDRESS")
 	env.PortServer = os.Getenv("PORT_SERVER")
+	env.ProjectID = os.Getenv("PROJECT_ID")
 
 	return &env
 }

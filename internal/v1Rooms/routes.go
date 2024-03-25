@@ -9,5 +9,5 @@ func Router(r *gin.Engine) {
 	routerRooms.POST("/", CreateUser)
 	routerRooms.GET("/:id")
 	routerRooms.PUT("/:id")
-	routerRooms.DELETE("/:id")
+	routerRooms.DELETE("/:id", DeleteUser)
 }
