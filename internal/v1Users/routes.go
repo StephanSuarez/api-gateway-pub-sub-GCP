@@ -3,12 +3,11 @@ package v1Users
 import "github.com/gin-gonic/gin"
 
 func Router(r *gin.Engine) {
-	routesUsers := r.Group("/v1/users")
+	routesUsers := r.Group("/api/v1/users")
 
-	routesUsers.POST("/")
-	routesUsers.GET("/")
-	routesUsers.GET("/:id")
-	routesUsers.PUT("/:id")
-	routesUsers.DELETE("/:id")
-	routesUsers.GET("/74abc")
+	routesUsers.POST("/", CreateUser)
+	routesUsers.GET("/", GetUsers)
+	routesUsers.GET("/:id", GetUser)
+	routesUsers.PUT("/:id", UpdateUser)
+	routesUsers.DELETE("/:id", DeleteUser)
 }
