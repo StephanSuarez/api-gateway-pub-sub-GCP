@@ -3,11 +3,12 @@ package v1Rooms
 import "github.com/gin-gonic/gin"
 
 func Router(r *gin.Engine) {
-	routerRooms := r.Group("v1/rooms")
+	routerRooms := r.Group("api/v1/rooms")
 
-	routerRooms.GET("/")
-	routerRooms.POST("/", CreateRoom)
-	routerRooms.GET("/:id")
-	routerRooms.PUT("/:id")
-	routerRooms.DELETE("/:id")
+	routerRooms.GET("", GetRooms)
+	routerRooms.POST("", CreateRoom)
+	routerRooms.GET(":id", GetRoomByID)
+	routerRooms.PUT(":id", UpdateCompleteRoom)
+	routerRooms.PATCH(":id", UpdateParcialRoom)
+	routerRooms.DELETE(":id", DeleteRoom)
 }
